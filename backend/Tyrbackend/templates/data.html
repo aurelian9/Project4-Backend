@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Tyr{% endblock %}
+{% block content %}
+<h1 align="center">Edit</h1>
+<br />
+<form method="POST">
+    <div class="form-group">
+        <label for="manual_date">Date</label>
+        <input type="text" class="form-control" id="manual_date" name ="manual_date" placeholder="DD/MM/YYYY" />
+    </div>
+    <div class="form-group">
+        <label for="body_parts">Muscle Group</label>
+        <input type="text" class="form-control" id="body_parts" name ="body_parts" placeholder="Upper Body/Lower Body/Chest/Back/Legs" />
+    </div>
+    <div class="form-group">
+        <label for="exercise_name">Name of Exercise</label>
+        <input type="text" class="form-control" id="exercise_name" name ="exercise_name" placeholder="Name of Exercise" />
+    </div>
+    <div class="form-group">
+        <label for="num_of_sets">Sets</label>
+        <input type="text" class="form-control" id="num_of_sets" name ="num_of_sets" placeholder="Number of sets" />
+    </div>
+    <div class="form-group">
+        <label for="num_of_reps">Reps</label>
+        <input type="num_of_reps" class="form-control" id="num_of_reps" name ="num_of_reps" placeholder="Number of repititions" />
+    </div>
+    <label for="notes">Notes</label>
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Edit Workout</button>
+    </div>  
+</form>     
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Tyr{% endblock %}
+{% block content %}
+<h1 align="center">Welcome to Tyr</h1>
+<br />
+<h3 align="center">You have gotten stronger</h3>
+<div class="card-deck">
+    {% for note in user.notes %}
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ note.manual_date }}</h5>
+        <p class="card-text">{{ user.first_name }}</p>
+        <p class="card-text">Exercise Name: {{ note.exercise_name }} </p>
+        <p class="card-text">Sets: {{ note.num_of_sets }}</p>
+        <p class="card-text">Reps: {{ note.num_of_reps }}</p>
+        <p class="card-text">Notes: {{ note.data }}</p>
+        <div class="card-footer">
+        <p class="card-text"><small class="text-muted">Created on {{ note.date }}</small></p>
+      </div>
+    </div>
+    <a href="/view/{{ note.id }}" class="btn btn-secondary btn-sm close">
+        <span style="font-size:16px" aria-hidden="true">View</span>
+    </a>
+    <a href="/edit/{{ note.id }}" type="button" class="btn btn-secondary btn-sm close">
+        <span style="font-size:16px" aria-hidden="true">Edit</span>
+    </a>
+    <br />
+    <button style="font-size:16px" type="button" class="btn btn-primary btn-sm close" onClick="deleteNote({{ note.id }})">
+        <span aria-hidden="true">Delete</span>
+    </button>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

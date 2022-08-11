@@ -1,0 +1,25 @@
+{% comment %} {% extends "base.html" %}
+{% block title %}Tyr{% endblock %}
+{% block content %}
+<h1 align="center">Gym Diary</h1>
+<br />
+<ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes %}
+    {% for exercise in user.exercises %}
+    <li class="list-group-item">
+        {{ note.date }}
+        {{ note.manual_date }}
+        {{ note.body_parts }}
+        {{ exercise.exercise_name }}
+        {{ exercise.num_of_sets }}
+        {{ exercise.num_of_reps }}
+        {{ note.data }}
+        <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </li>
+    {% endfor %}
+    {% endfor %}
+</ul>  
+{% endblock %}
+ {% endcomment %}
