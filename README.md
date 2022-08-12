@@ -47,7 +47,8 @@ Quite abit of documentation reading and trial and error since most of the tech u
 ### Unsolved problems
 
 Opening and viewing full card data on button click. 
-
+Implementing a stronger authenticator. 
+Probably use JWT with Flask, also change forms with WTForms.
 ---
 
 ## Acknowledgments
